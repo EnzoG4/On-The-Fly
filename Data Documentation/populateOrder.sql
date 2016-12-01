@@ -1,0 +1,10 @@
+insert into Order (OrderID, Tray, TotalPrice) values (1, 'Pizza', '$7.53');
+insert into Order (OrderID, Tray, TotalPrice) values (2, 'Pizza', '$7.78');
+insert into Order (OrderID, Tray, TotalPrice) values (3, 'Pizza', '$12.14');
+insert into Order (OrderID, Tray, TotalPrice) values (4, 'Salad', '$2.50');
+insert into Order (OrderID, Tray, TotalPrice) values (5, 'Tomatoes', '$11.89');
+insert into Order (OrderID, Tray, TotalPrice) values (6, 'Sandwich', '$7.46');
+insert into Order (OrderID, Tray, TotalPrice) values (7, 'Sandwich', '$0.08');
+insert into Order (OrderID, Tray, TotalPrice) values (8, 'Sandwich', '$18.16');
+insert into Order (OrderID, Tray, TotalPrice) values (9, 'Cheese', '$6.18');
+insert into Order (OrderID, Tray, TotalPrice) values (10, 'Burgers', '$0.66');

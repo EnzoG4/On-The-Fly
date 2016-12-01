@@ -1,0 +1,42 @@
+1. Admin manages orders
+Actor: Admin
+Precondition: Admin is logged on
+Postcondition: The order database is updated
+Queries: INSERT into order(foodName, quantity, diningHallName) values ('chicken', '2', 'Mac');
+  DELETE from order WHERE foodName = 'chicken';
+  UPDATE order WHERE foodName = 'chicken' SET quantity = '2';
+
+2. Customer signs up for website
+Actor: Customer
+Precondition: None
+Postcondition: Student table is updated with new information
+Queries: INSERT INTO student (firstname, lastname, email, phone, eagle_id, phone, password, password1) values ('Sandy', 'Choi', 'choify@bc.edu', '9089388495', '55555555', '66 Rm 305', 'Lower'); 
+
+<<<<<<< Updated upstream
+3. Deliverer signs up for webiste
+=======
+6. Deliverer signs up for website
+>>>>>>> Stashed changes
+Actor: Deliverer
+Precondition: None
+Postcondition: Deliverer table is  updated with new information
+Queries: INSERT INTO deliverer(ID, firstName, lastName, email, phoneNumber) values ('123', 'Enzo', 'Guevara', 'guevj@bc.edu', '2326534236');
+
+4. Customer views menu
+Actor: Customer
+Precondition: Customer is logged in
+Postcondition: Tables updated with food items on menu
+Queries: SELECT * FROM menu WHERE dininghallName = diningHallName;
+
+5. Deliverer views orders
+Actor: Deliverer
+Precondition: Deliverer is logged in
+Postcondition: Table is updated with orders from customers
+Queries: SELECT * FROM order WHERE orderID = orderID
+
+6. Customer places order
+Actor: Customer
+Precondition: Customer clicks on order from menu page
+Postcondition: an order is added to cart
+Queries: INSERT into 'order'(foodName, quantity, diningHallName) values ('chicken', '2', 'Mac');
+

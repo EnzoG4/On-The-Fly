@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset = UTF-8"/>
+	<meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+	<title> Boston College - On the Fly </title>
+
+	<!-- CSS -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  	<link href="css/style.css" type="text/css"  rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+	<ul id="dropdown1" class="dropdown-content">
+  		<li><a class = "modal-trigger" href="#modal2">Customer</a></li>
+  		<li class="divider"></li>
+  		<li><a class = "modal-trigger" href="#modal3">Flyer</a></li>
+	</ul>
+	<div class ="navbar-fixed">
+		<nav class = "white" role = "navigation">
+			<div class = "nav-wrapper container">
+				<a href="#!" class="brand-logo">On the Fly</a>
+   				<ul class="right hide-on-med-and-down">
+	      			<li><a class = "waves-effect waves-light btn modal-trigger red lighten-2" href="#modal1">Login</a></li>
+	      			<li><a class="dropdown-button waves-effect waves-light btn red lighten-2" href="#!" data-activates="dropdown1">Sign Up
+	      				<i class="material-icons right" style = "margin-top: -10px; margin-right: -20px;">arrow_drop_down</i></a></li>
+    			</ul>
+				<!-- <a id ="logo-container" href = "#" class ="brand-logo">On the Fly</a>
+				<ul class = "right hide-on-med-and-down">
+					<li><a class="waves-effect waves-light btn modal-trigger red lighten-2" href = "#modal1">Login</a></li>
+					<li><a class="waves-effect waves-light btn modal-trigger red lighten-2" href = "#modal2">Sign up</a></li>
+				</ul> -->
+				<ul id ="nav-mobile" class= "side-nav">
+					<li><a class="waves-effect waves-light btn modal-trigger red lighten-2" href = "#modal1">Login</a></li>
+					<li><a class="waves-effect waves-light btn modal-trigger red lighten-2" href = "#modal2">Sign up</a></li>
+				</ul>
+				<a href = "#" data-activates="nav-mobile" class = "button-collapse"><i class = "material-icons">menu</i></a>
+			</div>
+		</nav>
+	</div>
+	<div id="modal1" class="modal modal-fixed-footer">
+	    <div class="modal-content">
+	    	<h4>Login</h4>
+	    		<div class = "row">
+	    			<div class = "col s6 side">
+	    				<div class = "icon-block">
+		    				<h6 class = "thin">Student Log In</h8>
+				    		<form method = "POST" name = "customerLogin" action = "php/login.php">
+				    			<div class = "input-field col s12">
+				    				<i class = "material-icons prefix">email</i>
+				    				<input id="email" type ="email" class ="validate" name = "email">
+				    				<label for ="email">Email</label>
+				    			</div>
+				    			<div class = "input-field col s12">
+				    				<i class = "material-icons medium prefix">vpn_key</i>
+				    				<input id = "password" type = "password" class = "validate" name = 'password'>
+				    				<label for = "password">Password</label>
+				    			</div>
+				    			<div>
+				    				<button class="btn waves-effect waves-light" type="submit" name="action" style = "float:right; margin-left: 15px;">Submit
+										<i class="material-icons right">send</i>
+  									</button>
+									<button type = "reset" name = "reset" style ="float:right;" class = "waves-effect waves-light btn red">Reset</button>	
+				    			</div>
+					    	</form>
+			    		</div>
+					</div>
+					<div class = "col s6 side">
+						<div class = "icon-block">
+							<h6 class = "thin">Runner Log In</h8>
+							<form method = "POST" name = "runnerLogin" action = "php/runnerLogin.php">
+								<div class = "input-field col s12">
+									<i class = "material-icons medium prefix">email</i>
+									<input id = "email2" type = "email" class = "validate" name = 'email'>
+									<label for = "email">Email</label>
+								</div>
+								<div class = "input-field col s12">
+									<i class = "material-icons medium prefix">vpn_key</i>
+									<input id = "password2" type = "password" class = "validate" name = 'password'>
+									<label for = "password">Password</label>
+								</div>
+								<div>
+									<button class="btn waves-effect waves-light" type="submit" name="action" style = "float:right; margin-left: 15px;">Submit
+										<i class="material-icons right">send</i>
+  									</button>
+									<button type = "reset" name = "reset" style ="float:right;" class = "waves-effect waves-light btn red">Reset
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+			    <div class="modal-footer" style: "height:50px;">
+			      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<div id = "modal3" class = "modal modal-fixed-footer">
+		<div class = "modal-content">
+			<h4 class = "thin">Become an On the Fly Runner</h4>
+			<div class = "row">
+				<form method = "POST" name = "runnerForm" action = "php/formHandler2.php" onsubmit = "return validateForm_v2()">
+					<div class = "row">
+						<div class = "input-field col s5">
+							<i class = "material-icons prefix">account_circle</i>
+							<input type = "text" name = "firstname" class = "validate" onblur = "firstValidation_v2()">
+							<small class ='error' id = "firstError_v2"></small>
+							<label for "firstname">First Name</label>
+						</div>
+						<div class = "input-field col s6">
+							<i class = "material-icons prefix"></i>
+							<input type = "text" name = "lastname" class = "validate" onblur = "lastValidation_v2()">
+							<small class = "error" id = "lastError_v2"></small>
+							<label for = "lastname">Last Name</label>
+						</div>
+
+					</div>
+					<div class = "row">
+						<div class = "input-field col s5">
+							<i class = "material-icons prefix">email</i>
+							<input type = "email" name = "email" placeholder="studentname@bc.edu" class = "validate" onblur = "emailValidation_v2()">
+							<small class = 'error' id = "emailError_v2"></small>
+							<label for "email">Email</label>
+						</div>
+						<div class = "input-field col s6">
+							<i class = "material-icons prefix">phone_iphone</i>
+							<input type = "text" name = "phone" placeholder = "(XXX) XXX-XXXX" class = "validate" maxlength = "16" onblur = "phoneValidation_v2()">
+							<small class = "error" id = "phoneError_v2"></small>
+							<label for "phone">Phone</label>
+						</div>
+					</div>
+					<div class = "row">
+						<div class = "input-field col s5">
+							<i class = "material-icons prefix">vpn_key</i>
+							<input type = "password" name = "password" placeholder = "Enter a password" class = "validate" onblur = "passwordValidation_v2()">
+							<small class = "error" id = "passError_v2"></small>
+							<label for "password">Password</label>
+						</div>
+						<div class = "input-field col s6">
+							<i class = "material-icons prefix"></i>
+							<input type = "password" name = "password1" placeholder = "Confirm your password" class = "validate" onblur = "passwordValidation1_v2()">
+							<small class = "error" id = "passError1_v2"></small>
+							<label for "password">Confirm Password</label>
+						</div>
+					</div>
+					<div class = "col s11">
+						<button class="btn waves-effect waves-light" type="submit" name="action" style = "float:right; margin-left: 15px;">Submit
+							<i class="material-icons right">send</i>
+							</button>
+						<button type = "reset" name = "reset" style ="float:right;" class = "waves-effect waves-light btn red">Reset
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-footer">
+	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+	    </div>
+	</div>
+	<div id = "modal2" class = "modal modal-fixed-footer">
+		<div class = "modal-content">
+			<h4 class = "thin">Create an account</h4>
+			<div class = "row">
+				<form method = "POST" name = "createForm" action = "php/formHandler.php" onsubmit = "return validateForm()">
+					<div class = "row">
+						<div class = "input-field col s5">
+							<i class = "material-icons prefix">account_circle</i>
+							<input type = "text" name = "firstname" class = "validate" onblur = "firstValidation()">
+							<small id = "firstError" class = 'error'><p></p></small>
+							<label for = "firstname">First Name</label>
+						</div>
+						<div class = "input-field col s6">
+							<i class = "material-icons prefix"></i>
+							<input type = "text" name = "lastname" class = "validate" onblur = "lastValidation()">
+							<small id = "lastError" class = 'error'><p></p></small>
+							<label for = "lastname">Last Name</label>
+						</div>
+					</div>
+					<div class = "row">
+						<div class = "input-field col s5">
+							<i class = "material-icons prefix">email</i>
+							<input type = "email" name = "email" placeholder = "studentname@bc.edu" class = "validate" onblur = "emailValidation()">
+							<small id = "emailError" class = 'error'><p></p></small>
+							<label for = "email">Email</label>
+						</div>
+						<div class = "input-field col s6">
+							<i class = "material-icons prefix">phone_iphone</i>
+							<input type = "text" name = "phone" placeholder = "(XXX) XXX-XXXX" class = "validate" maxlength = "16" onblur = "phoneValidation()">
+							<small id = "phoneError" class = 'error'><p></p></small>
+							<label for "phone">Phone</label>
+						</div>
+					</div>
+					<div class = "row">
+						<div class = "input-field col s5">
+							<i class = "material-icons prefix">vpn_key</i>
+							<input type = "password" name = "password" placeholder = "Enter a password" class = "validate" onblur = "passwordValidation()">
+							<small id = "passError" class = 'error'><p></p></small>
+							<label for "password">Password</label>
+						</div>
+						<div class = "input-field col s6">
+							<i class = "material-icons prefix"></i>
+							<input type = "password" name = "password1" placeholder = "Confirm your password" class = "validate" onblur = "passwordValidation1()">
+							<small id = "passError1" class = 'error'><p></p></small>
+							<label for "password1">Confirm Password</label>
+						</div>
+					</div>
+					<div class = "row">
+						<div class = "input-field col s5">
+							<i class = "material-icons prefix">home</i>
+							<select name = "dorm">
+								<option value = "66" selected>66 Comm Ave</option>
+								<option value = "90">90 St. Thomas More Rd</option>
+								<option value = "2000">2000 Comm Ave</option>
+								<option value = "2150">2150 Comm Ave</option>
+								<option value = "Greycliff">Greycliff</option>
+								<option value = "Gabelli">Gabelli</option>
+								<option value = "Ignacio">Ignacio</option>
+								<option value = "Modulars">Mods</option>
+								<option value = "Rubenstein">Rubenstein</option>
+								<option value = "Stayer">Stayer</option>
+								<option value = "Vanderslice">Vanderslice</option>
+								<option value = "Voute">Voute</option>
+								<option value = "Walsh">Walsh</option>
+							</select>
+						</div>
+						<div class = "input-field col s6">
+							<i class = "material-icons prefix"></i>
+							<input type = "text" name = "room" class = "validate" placeholder = "Room Number" maxlength = "5" onblur = "roomValidation()">
+							<small id = "roomError" class = 'error'><p></p></small>
+							<label for "room">Room</label>
+						</div>
+						<div class = "row">
+							<div class = "input-field col s11">
+								<i class = "material-icons prefix ">check_box_outline_blank</i>
+								<input type = "text" name = "eagleID" class = "validate" maxlength = "8" placeholder="XXXXXXXX" onblur = "eagleIDError()">
+								<small id = "eagleIDError" class = 'error'><p></p></small>
+								<label for = "eagleID"> Eagle ID</label>
+							</div>
+						</div>
+					</div>
+					<div class = "col s11">
+						<button class="btn waves-effect waves-light" type="submit" name="action" style = "float:right; margin-left: 15px;">Submit
+							<i class="material-icons right">send</i>
+							</button>
+						<button type = "reset" name = "reset" style ="float:right;" class = "waves-effect waves-light btn red">Reset
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-footer">
+	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+	    </div>
+	</div>
+	<div class="slider video">
+    <ul class="slides">
+      <li>
+        <img src="images/bc.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Boston College's On The Fly</h3>
+          <h5 class="light grey-text text-lighten-3">Introducing On The Fly, a student run food delivery service here at Boston College</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/dining.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Skip the Lines!</h3>
+          <h5 class="light grey-text text-lighten-3">Simply make an order, and we will delivery it right to your doorstep!</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/newenglandclassic.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Deliciously easy</h3>
+          <h5 class="light grey-text text-lighten-3">Enjoy food from all dining halls.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/steakandcheese.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3 class = "black-text text-lighten-1">Steak and Cheese!</h3>
+          <h5 class="light black-text text-lighten-1">Instead of waiting 20 <br>minutes for a<br> steak and cheese, <br>go do something else.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+  	<div class ="container">
+  		<div class = "section">
+  			<div class = "row">
+  				<div class = "col s12">
+  					<div class = "icon-block">
+  						<h2 class = "center"><i class = "material-icons" style = "color: #e57373;">restaurant</i></h2>
+  						<h4 class = "center"> Our Service </h4>
+  						<h5 class = "center thin"> "Food and drinks on the fly!"</h5>
+  						<p class = "justify center"> Hungry and lazy? Say no more fam.</p>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  </div>
+  <div class = "container">
+  	<div class = "section">
+  		<div class = "row center">
+  			<h2> Here's how it works</h2>
+  		</div>
+  		<div class = "row">
+  			<div class = "col s12 m4 side hoverable">
+  				<div class = "icon-block">
+  					<h2 class = "center"><i class = "large material-icons" style = "color: #e57373;">restaurant_menu</i></h2>
+  					<h5 class = "center">Browse</h5>
+  					<p class = "light center"> Browse Boston College's menus and add what you like to your tray! </p>
+  				</div>
+  			</div>
+  			<div class = "col s12 m4 side hoverable">
+  				<div class = "icon-block">
+  					<h2 class = "center"><i class ="large material-icons" style = "color: #e57373;" >directions_run</i></h2>
+  					<h5 class = "center">Delivery</h5>
+  					<p class = "light center"> Sit back and relax while one of our On The Fly flyers processes your order.</p>
+  				</div>
+  			</div>
+  				<div class = "col s12 m4 side hoverable">
+  					<div class = "icon-block">
+  						<h2 class = "center"><i class = "large material-icons" style = "color: #e57373;">local_pizza</i></h2>
+  						<h5 class = "center">Enjoy</h5>
+  						<p class = "light center">Enjoy your fresh food in the comforts of your room. It's as simple as that!</p>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+	<footer class="page-footer">
+		<div class="container">
+		    <div class="row">
+		    	<div class="col l6 s12">
+		        <h5 class="white-text">About us</h5>
+		        <p class="grey-text text-lighten-4">3 BC students tryna code</p>
+		    </div>
+		    <div class="col l4 offset-l2 s12">
+		    	<h5 class="white-text">Links</h5>
+		        <ul>
+		          <li><a class="grey-text text-lighten-3" href="index.html">Homepage</a></li>
+		          <li><a class = "grey-text text-lighten-3 modal-trigger" href = "#modal3">Interested in Becoming a Flyer?</a></li>
+		        </ul>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="footer-copyright">
+		    <div class="container">
+		    © 2016 On The Fly
+		    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+		    </div>
+		  </div>
+	</footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<script type = "text/javascript" src = "js/index.js"></script>
